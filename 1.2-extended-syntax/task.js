@@ -17,21 +17,17 @@ function getResult(a, b, c) {
 
 function getAverageMark(marks) {
     let sum = 0;
-    if (marks.length > 5) {
-        console.log('Количество оценок превышает допустимое количество');
-        marks.splice(5);
-        for (let i = 0; i < marks.length; i++) {
-            sum += marks[i];
-        }
-        return sum / marks.length;
-    } else if (marks.length > 0 && marks.length <= 5) {
-        for (let i = 0; i < marks.length; i++) {
-            sum += marks[i];
-        }
-        return sum / marks.length;
-    } else {
+    if (marks.length == 0) {
         return 0;
     }
+    if (marks.length > 5) {
+        console.log('Количество оценок превышает допустимый предел');
+        marks.splice(5);
+    }
+    for (let i = 0; i < marks.length; i++) {
+        sum += marks[i];
+    }
+    return sum / marks.length;
 }
 
 function askDrink(name, dateOfBirthday) {
@@ -40,7 +36,7 @@ function askDrink(name, dateOfBirthday) {
     let currentAgeInMs = date - dateOfBirthday; //возраст в мс
     let currentAge = currentAgeInMs / 31557600000; //делим на кол-во мс в году, получаем возраст в годах
     if (currentAge < 18) {
-        return `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`
+        return `Сожалею, ${name}, но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!`;
     }
     return result;
 }
