@@ -7,10 +7,8 @@ function getResult(a, b, c) {
     let x = [];
     if (D == 0) {
         x.push(x1);
-        return x;
     } else if (D > 0) {
         x.push(x1, x2);
-        return x;
     }
     return x;
 }
