@@ -1,5 +1,4 @@
 String.prototype.isPalindrome = function() {
-    console.log(this);
     let newstr;
     let newstrarr;
     let palindrome;
