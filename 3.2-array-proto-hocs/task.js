@@ -18,12 +18,9 @@ function compareArrays(arr1, arr2) {
 }
 
 function memorize(fn, limit) {
-    debugger;
     let memory = [];
     return function(...args) {
-        debugger;
         let index = memory.findIndex(function(element, index) {
-            debugger;
             if (compareArrays(element.args, args)) {
                 return true;
             }
